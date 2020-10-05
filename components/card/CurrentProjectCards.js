@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Box, Image, Text, Heading, Link } from '@chakra-ui/core';
 import currentProjects from '@data/current-project';
 
-const CurrentProjecCard = () => {
+const CurrentProjecCards = () => {
   return (
     <>
       {currentProjects.map((project, index) => (
@@ -43,4 +43,4 @@ const CurrentProjecCard = () => {
   );
 };
 
-export default CurrentProjecCard;
+export default CurrentProjecCards;
