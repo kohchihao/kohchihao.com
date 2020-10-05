@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Flex, Stack, Heading, useColorMode, Text } from '@chakra-ui/core';
 import Container from '@components/Container';
+import CurrentProjectCard from '@components/card/CurrentProjectCard';
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -27,6 +28,13 @@ export default function Home() {
             I’m a Software Engineer that loves mobile and web development. Currently in my final year in NUS Computer
             Science.
           </Text>
+        </Flex>
+
+        <Flex flexDirection="column" justifyContent="flex-start" alignItems="flex-start" maxWidth="700px" mt={8}>
+          <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
+            Currently working on
+          </Heading>
+          <CurrentProjectCard />
         </Flex>
       </Stack>
     </Container>
