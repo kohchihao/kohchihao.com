@@ -1,15 +1,34 @@
-import Head from 'next/head'
-import { Button } from "@chakra-ui/core";
+import Head from 'next/head';
+import { Flex, Stack, Heading, useColorMode, Text } from '@chakra-ui/core';
+import Container from '@components/Container';
 
 export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+  const { colorMode } = useColorMode();
+  const secondaryTextColor = {
+    light: 'gray.700',
+    dark: 'gray.400',
+  };
 
-     <Button >Hello</Button>
-    </div>
-  )
+  return (
+    <Container>
+      <Stack
+        as="main"
+        spacing={8}
+        justifyContent="center"
+        alignItems="flex-start"
+        m="0 auto 4rem auto"
+        maxWidth="700px"
+      >
+        <Flex flexDirection="column" justifyContent="flex-start" alignItems="flex-start" maxWidth="700px">
+          <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
+            Hey, I’m Marcus Koh Chi Hao
+          </Heading>
+          <Text color={secondaryTextColor[colorMode]}>
+            I’m a Software Engineer that loves mobile and web development. Currently in my final year in NUS Computer
+            Science.
+          </Text>
+        </Flex>
+      </Stack>
+    </Container>
+  );
 }
