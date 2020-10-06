@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { Flex, Stack, Heading, useColorMode, Text } from '@chakra-ui/core';
 import Container from '@components/Container';
-import CurrentProjectCards from '@components/card/CurrentProjectCards';
+import CurrentProjectCard from '@components/card/CurrentProjectCard';
+import currentProjects from '@data/current-project';
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -34,7 +35,9 @@ export default function Home() {
           <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
             Currently working on
           </Heading>
-          <CurrentProjectCards />
+          {currentProjects.map((project, index) => (
+            <CurrentProjectCard project={project} key={index} />
+          ))}
         </Flex>
 
         <Flex flexDirection="column" justifyContent="flex-start" alignItems="flex-start" maxWidth="700px" mt={8}>
