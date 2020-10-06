@@ -9,6 +9,6 @@ export default [
   },
   {
     title: 'LianHe ZaoBao - 青年设计手机应用 改善大学生通勤',
-    url: 'https://www.kohchihao/static/images/featured-on/zaobao.pdf',
+    url: '../static/images/featured-on/zaobao.pdf',
   },
 ];

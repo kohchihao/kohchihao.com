@@ -5,6 +5,8 @@ import CurrentProjectCard from '@components/card/CurrentProjectCard';
 import currentProjects from '@data/current-project';
 import FeaturedOnCard from '@components/card/FeaturedOnCard';
 import featuredOn from '@data/featured-on';
+import ProjectCard from '@components/card/ProjectCard';
+import projects from '@data/projects';
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -48,6 +50,15 @@ export default function Home() {
           </Heading>
           {featuredOn.map((news, index) => (
             <FeaturedOnCard news={news} key={index} />
+          ))}
+        </Flex>
+
+        <Flex flexDirection="column" justifyContent="flex-start" alignItems="flex-start" maxWidth="700px" mt={8}>
+          <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
+            Projects
+          </Heading>
+          {projects.map((project, index) => (
+            <ProjectCard project={project} key={index} />
           ))}
         </Flex>
       </Stack>
