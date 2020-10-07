@@ -2,6 +2,8 @@ import React from 'react';
 import { ThemeProvider, CSSReset, ColorModeProvider, useColorMode } from '@chakra-ui/core';
 import theme from '@styles/theme';
 import { Global, css } from '@emotion/core';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../next-seo.config';
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -34,6 +36,7 @@ const App = ({ Component, pageProps }) => {
       <ColorModeProvider value="light">
         <CSSReset />
         <GlobalStyle>
+          <DefaultSeo {...SEO} />
           <Component {...pageProps} />{' '}
         </GlobalStyle>
       </ColorModeProvider>
