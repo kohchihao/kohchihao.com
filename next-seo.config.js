@@ -16,8 +16,6 @@ const SEO = {
       {
         url: 'https://kohchihao.vercel.app/api/og?title=Koh%20Chi%20Hao',
         alt: title,
-        width: 1280,
-        height: 720
       }
     ]
   }
