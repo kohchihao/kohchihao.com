@@ -1,6 +1,5 @@
 const title = 'Koh Chi Hao';
-const description =
-  'Mobile and web development enthusiast';
+const description = 'Mobile and web development enthusiast';
 
 const SEO = {
   title,
@@ -16,9 +15,14 @@ const SEO = {
       {
         url: 'https://kohchihao.vercel.app/api/og?title=Koh%20Chi%20Hao',
         alt: title,
-      }
-    ]
-  }
+      },
+    ],
+  },
+  twitter: {
+    handle: '',
+    site: '',
+    cardType: 'summary_large_image',
+  },
 };
 
 export default SEO;
