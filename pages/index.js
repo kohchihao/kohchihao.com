@@ -7,6 +7,7 @@ import FeaturedOnCard from '@components/card/FeaturedOnCard';
 import featuredOn from '@data/featured-on';
 import ProjectCard from '@components/card/ProjectCard';
 import projects from '@data/projects';
+import Footer from '@components/Footer';
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -61,6 +62,8 @@ export default function Home() {
             <ProjectCard project={project} key={index} />
           ))}
         </Flex>
+
+        <Footer />
       </Stack>
     </Container>
   );
