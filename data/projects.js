@@ -1,5 +1,39 @@
 export default [
   {
+    img_path: '',
+    title: 'Hookies (CS3217)',
+    description:
+      'A real-time racing game where you race with your friends to the finishing line! You can collect power ups along the way and hook onto bolts to increase your movement speed.',
+    tech: ['Swift', 'iOS', 'Socket.io', 'Firebase'],
+    urls: [
+      {
+        url_title: 'YouTube',
+        url: 'https://youtu.be/8bOMhUrZ9Fk',
+      },
+    ],
+  },
+  {
+    img_path: '',
+    title: 'buildevents.today (CS3216)',
+    description:
+      'A POC for an event company to allow anyone to build their own events. You can customise anything from the types of host you want to the type of games.',
+    tech: ['ReactJS', 'Django', 'Firebase'],
+    urls: [
+      {
+        url_title: 'Poster',
+        url: 'https://i.imgur.com/lR480zI.jpg',
+      },
+      {
+        url_title: 'STEPS',
+        url: 'https://isteps.comp.nus.edu.sg/event/15th-steps/module/CS3216/project/3',
+      },
+      {
+        url_title: 'YouTube',
+        url: 'https://youtu.be/yW-nsjOObJU',
+      },
+    ],
+  },
+  {
     img_path: '../static/images/projects/nusbuses.jpg',
     title: 'NUS Buses',
     description: 'A realtime NUS Buses arrival app. Redesigned and redeveloped.',
