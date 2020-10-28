@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "redirects": [
+    {
+      "source": "/resume.pdf",
+      "destination": "/koh-chi-hao-resume.pdf"
+    }
+  ]
+}

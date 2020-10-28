@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { Flex, Stack, Heading, useColorMode, Text } from '@chakra-ui/core';
 import Container from '@components/Container';
 import CurrentProjectCard from '@components/card/CurrentProjectCard';
