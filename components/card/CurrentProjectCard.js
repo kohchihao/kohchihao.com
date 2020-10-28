@@ -25,7 +25,7 @@ const CurrentProjecCard = ({ project }) => {
         <Box borderWidth="1px" rounded="lg" overflow="hidden">
           <Flex direction={['column', 'row']} p={8}>
             <Flex bg={'white'} mb={[4, 0]} rounded="lg" justify="center" align="center">
-              <Image height={100} width={100} src={project.image} alt={project.title} />
+              <Image height={100} width={100} src={project.image} alt={project.title} priority />
             </Flex>
 
             <Flex direction="column" px={[0, 8]}>
