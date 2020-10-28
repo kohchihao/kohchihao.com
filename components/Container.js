@@ -26,20 +26,27 @@ const Container = ({ children }) => {
           onClick={toggleColorMode}
         />
         <Box>
+          <NextLink href="/" passHref>
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              Home
+            </Button>
+          </NextLink>
+
           <NextLink href="/about" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
               About
             </Button>
           </NextLink>
-          <NextLink href="/blog" passHref>
+
+          <NextLink href="/status" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
-              Blog
+              Status
             </Button>
           </NextLink>
 
-          <NextLink href="/" passHref>
+          <NextLink href="/Dashboard" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
-              Home
+              Dashboard
             </Button>
           </NextLink>
         </Box>
