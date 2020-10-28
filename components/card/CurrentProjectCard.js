@@ -1,5 +1,6 @@
 import React from 'react';
-import { Flex, Box, Image, Text, Heading, Link, useColorMode } from '@chakra-ui/core';
+import { Flex, Box, Text, Heading, Link, useColorMode } from '@chakra-ui/core';
+import Image from 'next/image';
 
 const CurrentProjecCard = ({ project }) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -23,15 +24,9 @@ const CurrentProjecCard = ({ project }) => {
       >
         <Box borderWidth="1px" rounded="lg" overflow="hidden">
           <Flex direction={['column', 'row']} p={8}>
-            <Image
-              size="100px"
-              src={project.image}
-              alt={project.title}
-              fallbackSrc="https://via.placeholder.com/100"
-              bg={'white'}
-              mb={[4, 0]}
-              rounded="lg"
-            />
+            <Flex bg={'white'} mb={[4, 0]} rounded="lg" justify="center" align="center">
+              <Image height={100} width={100} src={project.image} alt={project.title} />
+            </Flex>
 
             <Flex direction="column" px={[0, 8]}>
               <Heading as="h3" size="lg" pb={2}>
