@@ -15,12 +15,17 @@
     "@emotion/styled": "^10.0.27",
     "chrome-aws-lambda": "^5.3.1",
     "emotion-theming": "^10.0.27",
+    "firebase": "^8.0.0",
+    "firebase-admin": "^9.3.0",
+    "formik": "^2.2.1",
     "next": "^10.0.0",
     "next-google-fonts": "^1.2.1",
     "next-seo": "^4.11.0",
+    "nookies": "^2.4.1",
     "puppeteer-core": "^5.3.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "prettier": "^2.1.2"

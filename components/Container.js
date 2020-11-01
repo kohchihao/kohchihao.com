@@ -38,17 +38,13 @@ const Container = ({ children }) => {
             </Button>
           </NextLink>
 
-          <NextLink href="/status" passHref>
-            <Button as="a" variant="ghost" p={[1, 4]}>
-              Status
-            </Button>
-          </NextLink>
+          <Button as="a" variant="ghost" p={[1, 4]} href="/status">
+            Status
+          </Button>
 
-          <NextLink href="/Dashboard" passHref>
-            <Button as="a" variant="ghost" p={[1, 4]}>
-              Dashboard
-            </Button>
-          </NextLink>
+          <Button as="a" variant="ghost" p={[1, 4]} href="/dashboard">
+            Dashboard
+          </Button>
         </Box>
       </StickyNav>
       <Flex

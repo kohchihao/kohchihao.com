@@ -4,6 +4,7 @@ import theme from '@styles/theme';
 import { Global, css } from '@emotion/core';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
+import { AuthProvider } from '@components/Auth';
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -32,15 +33,17 @@ const GlobalStyle = ({ children }) => {
 
 const App = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <ColorModeProvider value="light">
-        <CSSReset />
-        <GlobalStyle>
-          <DefaultSeo {...SEO} />
-          <Component {...pageProps} />{' '}
-        </GlobalStyle>
-      </ColorModeProvider>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <ColorModeProvider value="light">
+          <CSSReset />
+          <GlobalStyle>
+            <DefaultSeo {...SEO} />
+            <Component {...pageProps} />{' '}
+          </GlobalStyle>
+        </ColorModeProvider>
+      </ThemeProvider>
+    </AuthProvider>
   );
 };
 
