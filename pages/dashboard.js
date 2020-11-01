@@ -4,6 +4,7 @@ import { Input, Stack, Button, Flex, Heading, useToast } from '@chakra-ui/core';
 import Container from '@components/Container';
 import nookies from 'nookies';
 import admin from '@utils/admin-firebase';
+import { useRouter } from 'next/router';
 
 export async function getServerSideProps(ctx) {
   try {
@@ -25,9 +26,13 @@ export async function getServerSideProps(ctx) {
 }
 
 const Dashboard = () => {
-  const logout = () => {
+  const router = useRouter();
+
+  const logout = async () => {
     firebaseAuth.signOut();
+    router.push('/');
   };
+
   return (
     <Container>
       <Stack
@@ -37,9 +42,9 @@ const Dashboard = () => {
         alignItems="flex-start"
         m={['0 0 4rem 0', '0 auto 4rem auto']}
         maxWidth="700px"
-        w={[300, 500]}
+        w={'100%'}
       >
-        <Button onClick={logout} variantColor="teal" size="md" width="100%">
+        <Button onClick={logout} variantColor="teal" size="md">
           Logout
         </Button>
       </Stack>
