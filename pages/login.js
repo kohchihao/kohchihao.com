@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Container from '@components/Container';
-import { Input, Stack, Button, Flex, Heading, useToast } from '@chakra-ui/core';
+import { Input, Stack, Button, Flex, Heading, useToast } from '@chakra-ui/react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { isAdministrator, sendSignInLinkToEmail } from '@lib/auth';

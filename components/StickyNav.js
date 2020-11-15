@@ -1,5 +1,5 @@
 import React from 'react';
-import { useColorMode, Flex } from '@chakra-ui/core';
+import { useColorMode, Flex } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 const StickyNavbar = styled(Flex)`

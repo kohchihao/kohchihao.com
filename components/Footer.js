@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Text, Stack, Link, IconButton } from '@chakra-ui/core';
+import { Flex, Text, Stack, Link, IconButton } from '@chakra-ui/react';
 
 const Footer = () => {
   return (

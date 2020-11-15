@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Stack, Heading, Text, Link, Icon } from '@chakra-ui/core';
+import { Flex, Stack, Heading, Text, Link, Icon } from '@chakra-ui/react';
 import Container from '@components/Container';
 
 const About = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Badge, Text, Heading, Button } from '@chakra-ui/core';
+import { Flex, Box, Badge, Text, Heading, Button } from '@chakra-ui/react';
 
 const ProjectCard = ({ project }) => {
   return (

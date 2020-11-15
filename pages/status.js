@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { getStatus } from '@lib/bother';
 import { deserializeFirestoreTimestampToUnixTimestamp } from '@utils/firebase/deserialiser';
-import { Input, Stack, Button, Flex, Heading, Text } from '@chakra-ui/core';
+import { Input, Stack, Button, Flex, Heading, Text } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 
 export async function getServerSideProps(ctx) {

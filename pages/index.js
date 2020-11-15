@@ -1,4 +1,4 @@
-import { Flex, Stack, Heading, useColorMode, Text } from '@chakra-ui/core';
+import { Flex, Stack, Heading, useColorMode, Text } from '@chakra-ui/react';
 import Container from '@components/Container';
 import CurrentProjectCard from '@components/card/CurrentProjectCard';
 import currentProjects from '@data/current-project';

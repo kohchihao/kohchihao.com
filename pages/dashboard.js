@@ -1,6 +1,6 @@
 import React from 'react';
 import { firebaseAuth } from '@utils/firebase';
-import { Input, Stack, Button, Flex, Heading, useToast } from '@chakra-ui/core';
+import { Input, Stack, Button, Flex, Heading, useToast } from '@chakra-ui/react';
 import Container from '@components/Container';
 import nookies from 'nookies';
 import admin from '@utils/admin-firebase';

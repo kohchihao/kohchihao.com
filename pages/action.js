@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BASE_URL } from '@constants';
 import Error from 'next/error';
 import useLocalStorage from '@utils/hooks/useLocalStorage';
-import { CircularProgress, Flex } from '@chakra-ui/core';
+import { CircularProgress, Flex } from '@chakra-ui/react';
 
 import { useRouter } from 'next/router';
 import { isSignInWithEmailLink, signInWithEmailLink } from '@lib/auth';
