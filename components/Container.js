@@ -1,28 +1,21 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { useColorMode, Button, Flex, Box, IconButton } from '@chakra-ui/react';
-import styled from '@emotion/styled';
+import { useColorMode, Button, Flex, Box, IconButton, useColorModeValue } from '@chakra-ui/react';
 import StickyNav from '@components/StickyNav';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const Container = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const bgColor = {
-    light: 'white',
-    dark: 'gray.900',
-  };
-
-  const primarytextColor = {
-    light: 'black',
-    dark: 'white',
-  };
+  const bgColor = useColorModeValue('white', 'gray.900');
+  const primarytextColor = useColorModeValue('black', 'white');
 
   return (
     <>
       <StickyNav>
         <IconButton
           aria-label="Toggle dark mode"
-          icon={colorMode === 'dark' ? 'sun' : 'moon'}
+          icon={colorMode === 'dark' ? <SunIcon color="white" /> : <MoonIcon />}
           onClick={toggleColorMode}
         />
         <Box>
@@ -47,14 +40,7 @@ const Container = ({ children }) => {
           </Button>
         </Box>
       </StickyNav>
-      <Flex
-        as="main"
-        justifyContent="center"
-        flexDirection="column"
-        bg={bgColor[colorMode]}
-        color={primarytextColor[colorMode]}
-        px={8}
-      >
+      <Flex as="main" justifyContent="center" flexDirection="column" bg={bgColor} color={primarytextColor} px={8}>
         {children}
       </Flex>
     </>

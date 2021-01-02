@@ -1,6 +1,7 @@
 import React from 'react';
-import { Flex, Stack, Heading, Text, Link, Icon } from '@chakra-ui/react';
+import { Flex, Stack, Heading, Text, Link } from '@chakra-ui/react';
 import Container from '@components/Container';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 const About = () => {
   return (
@@ -27,12 +28,12 @@ const About = () => {
             In GiftforGood, I play multiple roles (Co-Tech lead, Web designer and managing members). I manage this
             project together with my fellow co-founders{' '}
             <Link href="https://www.linkedin.com/in/jin-ying-tan/" isExternal>
-              Jin Ying <Icon name="external-link" mx="2px" />
+              Jin Ying <ExternalLinkIcon mx="2px" />
             </Link>{' '}
             &
             <Link href="https://www.linkedin.com/in/jingwenwong/" isExternal>
               {' '}
-              Jing Wen <Icon name="external-link" mx="2px" />
+              Jing Wen <ExternalLinkIcon mx="2px" />
             </Link>
             .
           </Text>
@@ -44,7 +45,8 @@ const About = () => {
           <Text mb={4}>
             Click{' '}
             <Link href="/koh-chi-hao-resume.pdf" download>
-              here <Icon name="external-link" mx="2px" />
+              here
+              <ExternalLinkIcon mx="2px" />
             </Link>{' '}
             to download my resume if you are interested in my professional experience!
           </Text>

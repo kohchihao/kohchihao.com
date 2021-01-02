@@ -1,5 +1,5 @@
 import React from 'react';
-import { CSSReset, ColorModeProvider, useColorMode, ChakraProvider } from '@chakra-ui/react';
+import { CSSReset, ColorModeProvider, useColorMode, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import theme from '@styles/theme';
 import { Global, css } from '@emotion/react';
 import { DefaultSeo } from 'next-seo';
@@ -34,11 +34,11 @@ const GlobalStyle = ({ children }) => {
 const App = ({ Component, pageProps }) => {
   return (
     <AuthProvider>
-      <ChakraProvider theme={theme}>
+      <ChakraProvider theme={extendTheme(theme)}>
         <ColorModeProvider
-          value="light"
           options={{
             useSystsemColorMode: true,
+            initialColorMode: 'light',
           }}
         >
           <CSSReset />
