@@ -15,13 +15,12 @@ export async function getStaticProps() {
     props: {
       projects,
     },
-    revalidate: 1,
+    revalidate: 10800,
   };
 }
 
 export default function Home({ projects }) {
   const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
-  console.log('projects', projects);
 
   return (
     <Container>
