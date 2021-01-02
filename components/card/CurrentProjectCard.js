@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Text, Heading, Link, useColorMode } from '@chakra-ui/core';
+import { Flex, Box, Text, Heading, Link, useColorMode } from '@chakra-ui/react';
 import Image from 'next/image';
 
 const CurrentProjecCard = ({ project }) => {

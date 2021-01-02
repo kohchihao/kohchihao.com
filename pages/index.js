@@ -1,4 +1,4 @@
-import { Flex, Stack, Heading, useColorMode, Text } from '@chakra-ui/core';
+import { Flex, Stack, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import Container from '@components/Container';
 import CurrentProjectCard from '@components/card/CurrentProjectCard';
 import currentProjects from '@data/current-project';
@@ -9,17 +9,13 @@ import projects from '@data/projects';
 import Footer from '@components/Footer';
 
 export default function Home() {
-  const { colorMode } = useColorMode();
-  const secondaryTextColor = {
-    light: 'gray.700',
-    dark: 'gray.400',
-  };
+  const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
 
   return (
     <Container>
       <Stack
         as="main"
-        spacing={8}
+        spacing="8"
         justifyContent="center"
         alignItems="flex-start"
         m="0 auto 4rem auto"
@@ -29,7 +25,7 @@ export default function Home() {
           <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
             Hey, I’m Marcus Koh Chi Hao
           </Heading>
-          <Text color={secondaryTextColor[colorMode]}>
+          <Text color={secondaryTextColor}>
             I’m a Software Engineer that loves mobile and web development. Currently in my final year in NUS Computer
             Science.
           </Text>

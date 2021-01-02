@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Image, Text, Heading, Link, useColorMode } from '@chakra-ui/core';
+import { Flex, Box, Image, Text, Heading, Link, useColorMode } from '@chakra-ui/react';
 
 const FeaturedOnCard = ({ news }) => {
   const { colorMode, toggleColorMode } = useColorMode();
