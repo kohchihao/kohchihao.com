@@ -5,10 +5,21 @@ import currentProjects from '@data/current-project';
 import FeaturedOnCard from '@components/card/FeaturedOnCard';
 import featuredOn from '@data/featured-on';
 import ProjectCard from '@components/card/ProjectCard';
-import projects from '@data/projects';
 import Footer from '@components/Footer';
+import { getProjects } from '@lib/airtable';
 
-export default function Home() {
+export async function getStaticProps() {
+  const projects = await getProjects();
+
+  return {
+    props: {
+      projects,
+    },
+    revalidate: 10800,
+  };
+}
+
+export default function Home({ projects }) {
   const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
 
   return (
@@ -54,7 +65,7 @@ export default function Home() {
             Projects
           </Heading>
           {projects.map((project, index) => (
-            <ProjectCard project={project} key={index} />
+            <ProjectCard project={project} key={project.id} />
           ))}
         </Flex>
 
