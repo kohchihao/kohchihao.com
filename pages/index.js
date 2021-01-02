@@ -1,4 +1,4 @@
-import { Flex, Stack, Heading, useColorMode, Text, useColorModeValue } from '@chakra-ui/react';
+import { Flex, Stack, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import Container from '@components/Container';
 import CurrentProjectCard from '@components/card/CurrentProjectCard';
 import currentProjects from '@data/current-project';
@@ -9,7 +9,6 @@ import projects from '@data/projects';
 import Footer from '@components/Footer';
 
 export default function Home() {
-  const { colorMode } = useColorMode();
   const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
 
   return (

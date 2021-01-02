@@ -4,7 +4,6 @@ import theme from '@styles/theme';
 import { Global, css } from '@emotion/react';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
-import { AuthProvider } from '@components/Auth';
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -33,22 +32,20 @@ const GlobalStyle = ({ children }) => {
 
 const App = ({ Component, pageProps }) => {
   return (
-    <AuthProvider>
-      <ChakraProvider theme={extendTheme(theme)}>
-        <ColorModeProvider
-          options={{
-            useSystsemColorMode: true,
-            initialColorMode: 'light',
-          }}
-        >
-          <CSSReset />
-          <GlobalStyle>
-            <DefaultSeo {...SEO} />
-            <Component {...pageProps} />{' '}
-          </GlobalStyle>
-        </ColorModeProvider>
-      </ChakraProvider>
-    </AuthProvider>
+    <ChakraProvider theme={extendTheme(theme)}>
+      <ColorModeProvider
+        options={{
+          useSystsemColorMode: true,
+          initialColorMode: 'light',
+        }}
+      >
+        <CSSReset />
+        <GlobalStyle>
+          <DefaultSeo {...SEO} />
+          <Component {...pageProps} />{' '}
+        </GlobalStyle>
+      </ColorModeProvider>
+    </ChakraProvider>
   );
 };
 
