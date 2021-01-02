@@ -30,14 +30,6 @@ const Container = ({ children }) => {
               About
             </Button>
           </NextLink>
-
-          <Button as="a" variant="ghost" p={[1, 4]} href="/status">
-            Status
-          </Button>
-
-          <Button as="a" variant="ghost" p={[1, 4]} href="/dashboard">
-            Dashboard
-          </Button>
         </Box>
       </StickyNav>
       <Flex as="main" justifyContent="center" flexDirection="column" bg={bgColor} color={primarytextColor} px={8}>
