@@ -3,35 +3,33 @@ import { Flex, Box, Badge, Text, Heading, Button } from '@chakra-ui/react';
 
 const ProjectCard = ({ project }) => {
   return (
-    <>
-      <Box borderWidth="1px" rounded="lg" overflow="hidden" mb={4} w="100%">
-        <Flex direction="column" p={8}>
-          <Flex direction="column" px={[0, 8]} pb={2} space>
-            <Heading as="h4" size="md" pb={2}>
-              {project.title}
-            </Heading>
+    <Box borderWidth="1px" rounded="lg" overflow="hidden" mb={4} w="100%">
+      <Flex direction="column" p={8}>
+        <Flex direction="column" px={[0, 8]} pb={2}>
+          <Heading as="h4" size="md" pb={2}>
+            {project.title}
+          </Heading>
 
-            <Flex direction="row" pb={2} wrap="wrap">
-              {project.tech.map((tech) => (
-                <Badge mr="2" mt="2">
-                  {tech}
-                </Badge>
-              ))}
-            </Flex>
+          <Flex direction="row" pb={2} wrap="wrap">
+            {project.tech.map((tech, index) => (
+              <Badge mr="2" mt="2" key={index}>
+                {tech}
+              </Badge>
+            ))}
+          </Flex>
 
-            <Text pb={2}>{project.description}</Text>
+          <Text pb={2}>{project.description}</Text>
 
-            <Flex direction="row" pb={2} wrap="wrap">
-              {project.urls.map((urlObj) => (
-                <Button mr="2" mt="2" href={urlObj.url} as="a">
-                  {urlObj.url_title}
-                </Button>
-              ))}
-            </Flex>
+          <Flex direction="row" pb={2} wrap="wrap">
+            {project.urlTitles.map((titles, index) => (
+              <Button mr="2" mt="2" href={project.links[index]} as="a" key={index}>
+                {titles}
+              </Button>
+            ))}
           </Flex>
         </Flex>
-      </Box>
-    </>
+      </Flex>
+    </Box>
   );
 };
 
