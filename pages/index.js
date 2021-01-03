@@ -16,7 +16,7 @@ export async function getStaticProps() {
       projects,
       featureds,
     },
-    revalidate: 1,
+    revalidate: 10800,
   };
 }
 
