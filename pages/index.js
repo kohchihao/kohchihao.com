@@ -3,23 +3,24 @@ import Container from '@components/Container';
 import CurrentProjectCard from '@components/card/CurrentProjectCard';
 import currentProjects from '@data/current-project';
 import FeaturedOnCard from '@components/card/FeaturedOnCard';
-import featuredOn from '@data/featured-on';
 import ProjectCard from '@components/card/ProjectCard';
 import Footer from '@components/Footer';
-import { getProjects } from '@lib/airtable';
+import { getProjects, getFeatureds } from '@lib/airtable';
 
 export async function getStaticProps() {
   const projects = await getProjects();
+  const featureds = await getFeatureds();
 
   return {
     props: {
       projects,
+      featureds,
     },
     revalidate: 10800,
   };
 }
 
-export default function Home({ projects }) {
+export default function Home({ projects, featureds }) {
   const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
 
   return (
@@ -55,7 +56,7 @@ export default function Home({ projects }) {
           <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
             Featured On
           </Heading>
-          {featuredOn.map((news, index) => (
+          {featureds.map((news, index) => (
             <FeaturedOnCard news={news} key={index} />
           ))}
         </Flex>
