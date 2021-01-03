@@ -3,7 +3,7 @@ import { Flex, Box, Text, Heading, Link, useColorMode } from '@chakra-ui/react';
 import Image from 'next/image';
 
 const CurrentProjecCard = ({ project }) => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const hoverBg = {
     light: 'gray.50',

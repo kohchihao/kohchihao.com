@@ -1,8 +1,8 @@
 import React from 'react';
-import { Flex, Box, Image, Text, Heading, Link, useColorMode } from '@chakra-ui/react';
+import { Flex, Box, Heading, Link, useColorMode } from '@chakra-ui/react';
 
 const FeaturedOnCard = ({ news }) => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const hoverBg = {
     light: 'gray.50',
@@ -28,7 +28,6 @@ const FeaturedOnCard = ({ news }) => {
               <Heading as="h4" size="md">
                 {news.title}
               </Heading>
-              <Text>{news.description}</Text>
             </Flex>
           </Flex>
         </Box>
