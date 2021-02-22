@@ -1,7 +1,12 @@
 import React from 'react';
 import { Flex, Box, Badge, Text, Heading, Button } from '@chakra-ui/react';
+import { Project } from '@typed/Project';
 
-const ProjectCard = ({ project }) => {
+interface Props {
+  project: Project
+}
+
+const ProjectCard = ({ project }: Props) => {
   return (
     <Box borderWidth="1px" rounded="lg" overflow="hidden" mb={4} w="100%">
       <Flex direction="column" p={8}>

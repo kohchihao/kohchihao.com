@@ -6,8 +6,11 @@ import FeaturedOnCard from '@components/card/FeaturedOnCard';
 import ProjectCard from '@components/card/ProjectCard';
 import Footer from '@components/Footer';
 import { getProjects, getFeatureds } from '@lib/airtable';
+import { Project } from '@typed/Project';
+import { Featured } from '@typed/Featured';
+import { GetStaticProps } from 'next'
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const projects = await getProjects();
   const featureds = await getFeatureds();
 
@@ -20,7 +23,12 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ projects, featureds }) {
+interface Props {
+  projects: Project[],
+  featureds: Featured[],
+}
+
+export default function Home({ projects, featureds }: Props) {
   const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
 
   return (
@@ -57,7 +65,7 @@ export default function Home({ projects, featureds }) {
             Featured On
           </Heading>
           {featureds.map((news, index) => (
-            <FeaturedOnCard news={news} key={index} />
+            <FeaturedOnCard news={news} key={news.id} />
           ))}
         </Flex>
 

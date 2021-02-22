@@ -10,7 +10,11 @@ const StickyNavbar = styled(Flex)`
   transition: background-color 0.1 ease-in-out;
 `;
 
-const StickyNav = ({ children }) => {
+interface Props {
+  children: React.ReactNode
+}
+
+const StickyNav = ({ children }: Props) => {
   const { colorMode } = useColorMode();
 
   const navBgColor = {

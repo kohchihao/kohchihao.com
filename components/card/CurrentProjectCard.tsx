@@ -2,7 +2,16 @@ import React from 'react';
 import { Flex, Box, Text, Heading, Link, useColorMode } from '@chakra-ui/react';
 import Image from 'next/image';
 
-const CurrentProjecCard = ({ project }) => {
+interface Props {
+  project: {
+    title: string,
+    description: string,
+    url: string,
+    image: string,
+  }
+}
+
+const CurrentProjectCard = ({ project }: Props) => {
   const { colorMode } = useColorMode();
 
   const hoverBg = {
@@ -41,4 +50,4 @@ const CurrentProjecCard = ({ project }) => {
   );
 };
 
-export default CurrentProjecCard;
+export default CurrentProjectCard;

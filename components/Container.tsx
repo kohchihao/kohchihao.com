@@ -4,7 +4,11 @@ import { useColorMode, Button, Flex, Box, IconButton, useColorModeValue } from '
 import StickyNav from '@components/StickyNav';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-const Container = ({ children }) => {
+interface Props {
+  children: React.ReactNode
+}
+
+const Container = ({ children }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const bgColor = useColorModeValue('white', 'gray.900');

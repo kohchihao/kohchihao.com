@@ -4,8 +4,13 @@ import theme from '@styles/theme';
 import { Global, css } from '@emotion/react';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
+import { AppProps } from 'next/app'
 
-const GlobalStyle = ({ children }) => {
+interface GlobalStyleProps {
+  children: React.ReactNode
+}
+
+const GlobalStyle = ({ children }: GlobalStyleProps) => {
   const { colorMode } = useColorMode();
 
   return (
@@ -30,12 +35,12 @@ const GlobalStyle = ({ children }) => {
   );
 };
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={extendTheme(theme)}>
       <ColorModeProvider
         options={{
-          useSystsemColorMode: true,
+          useSystemColorMode: true,
           initialColorMode: 'light',
         }}
       >

@@ -1,6 +1,8 @@
 import airtable from 'airtable';
+import { Project } from '@typed/Project';
+import { Featured } from '@typed/Featured';
 
-export const getProjects = () => {
+export const getProjects = (): Promise<Project[]> => {
   const totalRecords = [];
 
   return new Promise((resolve, reject) => {
@@ -39,7 +41,7 @@ export const getProjects = () => {
   });
 };
 
-export const getFeatureds = () => {
+export const getFeatureds = (): Promise<Featured[]> => {
   const totalRecords = [];
 
   return new Promise((resolve, reject) => {
