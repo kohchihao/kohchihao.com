@@ -7,22 +7,28 @@ const MacOSChromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google C
 const exePath =
   process.platform === 'win32' ? WindowsChromePath : process.platform === 'linux' ? LinuxChromePath : MacOSChromePath;
 
-export async function getOptions(isDev) {
-  let options;
+interface Options {
+  args: string[];
+  executablePath: string;
+  headless: boolean;
+}
 
-  if (isDev) {
-    options = {
-      args: [],
-      executablePath: exePath,
-      headless: true,
-    };
-  } else {
-    options = {
-      args: chrome.args,
-      executablePath: await chrome.executablePath,
-      headless: chrome.headless,
-    };
-  }
+export async function getOptions(isDev: boolean) {
+	let options: Options;
 
-  return options;
+	if (isDev) {
+		options = {
+			args: [],
+			executablePath: exePath,
+			headless: true,
+		};
+	} else {
+		options = {
+			args: chrome.args,
+			executablePath: await chrome.executablePath,
+			headless: chrome.headless,
+		};
+	}
+
+	return options;
 }
