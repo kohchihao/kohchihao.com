@@ -20,7 +20,7 @@ const About = () => {
 					</Heading>
 					<Text mb={4}>
             Hello! I am Chi Hao aka Marcus. I am a junior React developer and a co-founder of GiftforGood. I am
-            currently studying in National University of Singapore (NUS) and I'm in my final semester of study! I
+            currently studying in National University of Singapore (NUS) and I&#39;m in my final semester of study! I
             specialised in Software Engineering and Database (though I am more SE focused).
 					</Text>
 
@@ -39,7 +39,7 @@ const About = () => {
 					</Text>
 
 					<Text mb={4}>
-            On a personal note, I enjoy eating good food and cycling. I try to cycle whenever I'm free during the week.
+            On a personal note, I enjoy eating good food and cycling. I try to cycle whenever I&#39;m free during the week.
 					</Text>
 
 					<Text mb={4}>
