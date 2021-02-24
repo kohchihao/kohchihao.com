@@ -7,8 +7,14 @@ const MacOSChromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google C
 const exePath =
   process.platform === 'win32' ? WindowsChromePath : process.platform === 'linux' ? LinuxChromePath : MacOSChromePath;
 
-export async function getOptions(isDev) {
-  let options;
+interface Options {
+  args: string[];
+  executablePath: string;
+  headless: boolean;
+}
+
+export async function getOptions(isDev: boolean) {
+  let options: Options;
 
   if (isDev) {
     options = {

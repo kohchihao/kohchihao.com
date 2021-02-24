@@ -1,5 +1,6 @@
 import { getScreenshot } from '@lib/og/chromeApi';
 import { getHtml } from '@lib/og/htmlTemplate';
+import { NextApiRequest, NextApiResponse} from 'next';
 
 /**
  * Most common OG image size
@@ -9,7 +10,7 @@ const DefaultImageSize = {
   width: 1200,
 };
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const html = getHtml(req.query.title);
     const file = await getScreenshot({
