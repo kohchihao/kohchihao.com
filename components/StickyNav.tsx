@@ -11,36 +11,36 @@ const StickyNavbar = styled(Flex)`
 `;
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const StickyNav = ({ children }: Props) => {
-  const { colorMode } = useColorMode();
+	const { colorMode } = useColorMode();
 
-  const navBgColor = {
-    light: 'rgba(255, 255, 255, 0.8)',
-    dark: 'rgba(23, 25, 35, 0.8)',
-  };
+	const navBgColor = {
+		light: 'rgba(255, 255, 255, 0.8)',
+		dark: 'rgba(23, 25, 35, 0.8)',
+	};
 
-  return (
-    <>
-      <StickyNavbar
-        flexDirection="row"
-        justifyContent="space-between"
-        alignItems="center"
-        maxWidth="1000px"
-        width="100%"
-        bg={navBgColor[colorMode]}
-        as="nav"
-        p={8}
-        mt={[0, 8]}
-        mb={8}
-        mx="auto"
-      >
-        {children}
-      </StickyNavbar>
-    </>
-  );
+	return (
+		<>
+			<StickyNavbar
+				flexDirection="row"
+				justifyContent="space-between"
+				alignItems="center"
+				maxWidth="1000px"
+				width="100%"
+				bg={navBgColor[colorMode]}
+				as="nav"
+				p={8}
+				mt={[0, 8]}
+				mb={8}
+				mx="auto"
+			>
+				{children}
+			</StickyNavbar>
+		</>
+	);
 };
 
 export default StickyNav;
