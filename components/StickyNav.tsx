@@ -1,46 +1,40 @@
 import React from 'react';
-import { useColorMode, Flex } from '@chakra-ui/react';
+import { Flex, useColorModeValue, FlexProps } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 const StickyNavbar = styled(Flex)`
-  position: sticky;
+  position: fixed;
   z-index: 10;
   top: 0;
+	right: 0;
+	left: 0;
   backdrop-filter: saturate(180%) blur(20px);
-  transition: background-color 0.1 ease-in-out;
 `;
 
-interface Props {
+interface Props extends FlexProps {
   children: React.ReactNode;
 }
 
-const StickyNav = ({ children }: Props) => {
-	const { colorMode } = useColorMode();
+const StickyNav = ({ children, ...rests }: Props) => {
 
-	const navBgColor = {
-		light: 'rgba(255, 255, 255, 0.8)',
-		dark: 'rgba(23, 25, 35, 0.8)',
-	};
+  const bgColor = useColorModeValue('rgba(255, 255, 255, 0.6)', 'rgba(17, 24, 39, 0.3)');
 
-	return (
-		<>
-			<StickyNavbar
-				flexDirection="row"
-				justifyContent="space-between"
-				alignItems="center"
-				maxWidth="1000px"
-				width="100%"
-				bg={navBgColor[colorMode]}
-				as="nav"
-				p={8}
-				mt={[0, 8]}
-				mb={8}
-				mx="auto"
-			>
-				{children}
-			</StickyNavbar>
-		</>
-	);
+  return (
+    <>
+      <StickyNavbar
+        flexDirection="row"
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+        bg={bgColor}
+        as="nav"
+        p={2}
+        {...rests}
+      >
+        {children}
+      </StickyNavbar>
+    </>
+  );
 };
 
 export default StickyNav;

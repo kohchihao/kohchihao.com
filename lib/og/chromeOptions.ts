@@ -14,21 +14,21 @@ interface Options {
 }
 
 export async function getOptions(isDev: boolean) {
-	let options: Options;
+  let options: Options;
 
-	if (isDev) {
-		options = {
-			args: [],
-			executablePath: exePath,
-			headless: true,
-		};
-	} else {
-		options = {
-			args: chrome.args,
-			executablePath: await chrome.executablePath,
-			headless: chrome.headless,
-		};
-	}
+  if (isDev) {
+    options = {
+      args: [],
+      executablePath: exePath,
+      headless: true,
+    };
+  } else {
+    options = {
+      args: chrome.args,
+      executablePath: await chrome.executablePath,
+      headless: chrome.headless,
+    };
+  }
 
-	return options;
+  return options;
 }
