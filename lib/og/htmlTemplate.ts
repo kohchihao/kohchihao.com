@@ -1,5 +1,5 @@
 export function getHtml(title) {
-	return `
+  return `
     <!DOCTYPE html>
     <html>
         <meta charset="utf-8">
