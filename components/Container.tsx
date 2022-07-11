@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import NextLink from 'next/link';
-import { useColorMode, Button, Flex, IconButton, useColorModeValue, Text, VStack } from '@chakra-ui/react';
+import { Button, Flex, IconButton, Text, VStack } from '@chakra-ui/react';
 import StickyNav from '@components/StickyNav';
-import { MoonIcon, SunIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useRouter } from 'next/router';
 
 interface Props {
@@ -16,10 +16,10 @@ interface NavLinksProps {
 const NavLinks = ({ isActive }: NavLinksProps) => {
   return (
     <>
-      <NextLink href='/' passHref>
+      <NextLink href="/" passHref>
         <Button
-          as='a'
-          variant='ghost'
+          as="a"
+          variant="ghost"
           p={4}
           mr={2}
           isActive={isActive === 'Home'}
@@ -30,10 +30,24 @@ const NavLinks = ({ isActive }: NavLinksProps) => {
         </Button>
       </NextLink>
 
-      <NextLink href='/about' passHref>
+      <NextLink href="https://www.craft.do/s/h6E18Qv9azQELl" passHref>
         <Button
-          as='a'
-          variant='ghost'
+          target="_blank"
+          rel="noopener noreferrer"
+          as="a"
+          variant="ghost"
+          p={4}
+          mr={2}
+          w={{ base: '100%', md: '10%' }}
+        >
+          Engineering Blog
+        </Button>
+      </NextLink>
+
+      <NextLink href="/about" passHref>
+        <Button
+          as="a"
+          variant="ghost"
           p={4}
           mr={2}
           isActive={isActive === 'About'}
@@ -53,10 +67,8 @@ const sitemap = {
 };
 
 const Container = ({ children }: Props) => {
-  const { colorMode, toggleColorMode } = useColorMode();
   const router = useRouter();
-  const primaryTextColor = useColorModeValue('black', 'white');
-  const bgColor = useColorModeValue('white', 'black');
+
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -66,54 +78,39 @@ const Container = ({ children }: Props) => {
   return (
     <>
       <StickyNav display={{ base: 'none', md: 'flex' }}>
-        <IconButton
-          aria-label='Toggle dark mode'
-          icon={colorMode === 'dark' ? <SunIcon color='white' /> : <MoonIcon />}
-          onClick={toggleColorMode}
-          variant='ghost'
-          mr={2}
-        />
-
         <NavLinks isActive={sitemap[router.pathname]} />
       </StickyNav>
 
       <StickyNav
         display={{ base: 'flex', md: 'none' }}
-        justifyContent='flex-start'
-        alignItems='flex-start'
-        color='white'
-        flexDirection='column'
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        color="white"
+        flexDirection="column"
       >
-        <Flex
-          flexDirection='row'
-          alignItems='center'
-        >
+        <Flex flexDirection="row" alignItems="center">
           <IconButton
-            aria-label='Toggle hamburger menu'
+            aria-label="Toggle hamburger menu"
             icon={isExpanded ? <CloseIcon /> : <HamburgerIcon />}
             onClick={toggleMobileMenu}
-            variant='ghost'
+            variant="ghost"
           />
 
-          {isExpanded ? null : <Text pl={2} fontWeight='bold'>{sitemap[router.pathname]}</Text>}
+          {isExpanded ? null : (
+            <Text pl={2} fontWeight="bold">
+              {sitemap[router.pathname]}
+            </Text>
+          )}
         </Flex>
 
-        {isExpanded ?
-          <VStack pt={2} w='100%'>
+        {isExpanded ? (
+          <VStack pt={2} w="100%">
             <NavLinks isActive={sitemap[router.pathname]} />
           </VStack>
-          : null}
+        ) : null}
       </StickyNav>
 
-      <Flex
-        as='main'
-        justifyContent='center'
-        flexDirection='column'
-        bg={bgColor}
-        color={primaryTextColor}
-        px={8}
-        pt={32}
-      >
+      <Flex as="main" justifyContent="center" flexDirection="column" bg={'#111111'} color={'white'} px={8} pt={32}>
         {children}
       </Flex>
     </>
