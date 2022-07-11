@@ -1,9 +1,8 @@
-import React from 'react';
-import { CSSReset, ColorModeProvider, useColorMode, ChakraProvider, extendTheme } from '@chakra-ui/react';
-import theme from '@styles/theme';
-import { Global, css } from '@emotion/react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { css, Global } from '@emotion/react';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
+import React from 'react';
 import SEO from '../next-seo.config';
 
 interface GlobalStyleProps {
@@ -11,11 +10,8 @@ interface GlobalStyleProps {
 }
 
 const GlobalStyle = ({ children }: GlobalStyleProps) => {
-  const { colorMode } = useColorMode();
-
   return (
     <>
-      <CSSReset />
       <Global
         styles={css`
           html {
@@ -26,7 +22,7 @@ const GlobalStyle = ({ children }: GlobalStyleProps) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: ${colorMode === 'light' ? 'white' : 'black'};
+            background: rgb(17 17 17);
           }
         `}
       />
@@ -37,19 +33,11 @@ const GlobalStyle = ({ children }: GlobalStyleProps) => {
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ChakraProvider theme={extendTheme(theme)}>
-      <ColorModeProvider
-        options={{
-          useSystemColorMode: true,
-          initialColorMode: 'light',
-        }}
-      >
-        <CSSReset />
-        <GlobalStyle>
-          <DefaultSeo {...SEO} />
-          <Component {...pageProps} />{' '}
-        </GlobalStyle>
-      </ColorModeProvider>
+    <ChakraProvider resetCSS={true}>
+      <GlobalStyle>
+        <DefaultSeo {...SEO} />
+        <Component {...pageProps} />{' '}
+      </GlobalStyle>
     </ChakraProvider>
   );
 };
