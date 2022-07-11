@@ -30,6 +30,20 @@ const NavLinks = ({ isActive }: NavLinksProps) => {
         </Button>
       </NextLink>
 
+      <NextLink href="https://www.craft.do/s/h6E18Qv9azQELl" passHref>
+        <Button
+          target="_blank"
+          rel="noopener noreferrer"
+          as="a"
+          variant="ghost"
+          p={4}
+          mr={2}
+          w={{ base: '100%', md: '10%' }}
+        >
+          Engineering Blog
+        </Button>
+      </NextLink>
+
       <NextLink href="/about" passHref>
         <Button
           as="a"

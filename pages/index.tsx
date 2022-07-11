@@ -1,4 +1,4 @@
-import { Flex, Stack, Heading, Text } from '@chakra-ui/react';
+import { Flex, Stack, Heading, Text, Link } from '@chakra-ui/react';
 import Container from '@components/Container';
 import FeaturedOnCard from '@components/card/FeaturedOnCard';
 import ProjectCard from '@components/card/ProjectCard';
@@ -7,6 +7,7 @@ import { getProjects, getFeatureds } from '@lib/airtable';
 import { Project } from '@typed/Project';
 import { Featured } from '@typed/Featured';
 import { GetStaticProps } from 'next';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = await getProjects();
@@ -41,7 +42,14 @@ export default function Home({ projects, featureds }: Props) {
           <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
             Marcus Koh Chi Hao
           </Heading>
-          <Text>React Native Software Engineer by day. Exotic succulent collector by night.</Text>
+          <Text>
+            React Native Software Engineer by day.{' '}
+            <Link href="https://instagram.com/hdblithops?r=nametag" isExternal color="teal.500">
+              Exotic succulents
+              <ExternalLinkIcon mx="2px" />
+            </Link>{' '}
+            collector by night.
+          </Text>
         </Flex>
 
         <Flex flexDirection="column" justifyContent="flex-start" alignItems="flex-start" maxWidth="700px" mt={8}>
